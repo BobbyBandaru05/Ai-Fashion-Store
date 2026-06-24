@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Success</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#0d1117;
+            color:white;
+        }
+
+        .success-card{
+            background:#161b22;
+            border-radius:20px;
+            padding:50px;
+            box-shadow:0 0 25px rgba(131,56,236,0.3);
+        }
+
+        .btn-gradient{
+            background:linear-gradient(90deg,#ff006e,#8338ec);
+            border:none;
+            color:white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <div class="success-card text-center">
+
+        <h1 style="color:#00ff99;">
+            🎉 Order Placed Successfully!
+        </h1>
+
+        <p class="mt-4 fs-5">
+            Thank you for shopping with AI Fashion Store.
+        </p>
+
+        <p>
+            Your order has been saved successfully.
+        </p>
+
+        <!-- 🔥 OPTIONAL: show quick user info -->
+        {% if user.is_authenticated %}
+            <p style="color:#ff006e;">
+                Ordered by: {{ user.username }}
+            </p>
+        {% endif %}
+
+        <a href="/"
+           class="btn btn-gradient btn-lg mt-3">
+            Continue Shopping
+        </a>
+
+        <a href="/orders/"
+           class="btn btn-light btn-lg mt-3 ms-2">
+            View My Orders
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

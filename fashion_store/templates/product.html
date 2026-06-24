@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>{{ product.name }}</title>
+
+```
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+```
+
+</head>
+
+<body style="background:#0d1117;color:white;">
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-dark"
+style="
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.1);
+">
+
+```
+<div class="container">
+
+    <a class="navbar-brand fw-bold" href="/">
+        AI Fashion Store
+    </a>
+
+</div>
+```
+
+</nav>
+
+<!-- Product Details -->
+
+<div class="container mt-5">
+
+```
+<div class="card p-4"
+style="
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border:none;
+border-radius:20px;
+color:white;
+box-shadow:0 0 20px rgba(131,56,236,0.3);
+">
+
+    <div class="row">
+
+        <!-- Product Image -->
+        <div class="col-md-6">
+
+            <img src="{{ product.image.url }}"
+                 class="img-fluid rounded"
+                 style="
+                 width:100%;
+                 height:550px;
+                 object-fit:contain;
+                 background:white;
+                 border-radius:15px;
+                 ">
+
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-md-6">
+
+            <h1 class="fw-bold">
+                {{ product.name }}
+            </h1>
+
+            <h4 style="color:#ffd43b;">
+                ⭐ {{ product.rating }}
+                ({{ product.reviews }} Reviews)
+            </h4>
+
+            <h2 style="color:#00ff99;">
+                ₹{{ product.price }}
+            </h2>
+
+            {% if product.offer %}
+            <div class="alert alert-danger mt-3">
+                🔥 {{ product.offer }}
+            </div>
+            {% endif %}
+
+            <hr>
+
+            <h5>Brand</h5>
+            <p>{{ product.brand }}</p>
+
+            <h5>Category</h5>
+            <p>{{ product.category }}</p>
+
+            <h5>Color</h5>
+            <p>{{ product.color }}</p>
+
+            <h5>Size</h5>
+            <p>{{ product.size }}</p>
+
+            <h5>Material</h5>
+            <p>{{ product.material }}</p>
+
+            <h5>Stock Status</h5>
+
+            {% if product.stock > 0 %}
+            <p class="text-success fw-bold">
+                {{ product.stock }} Available
+            </p>
+            {% else %}
+            <p class="text-danger fw-bold">
+                Out Of Stock
+            </p>
+            {% endif %}
+
+            <h5 style="color:#ff006e;" class="fw-bold">
+                Product Description
+            </h5>
+
+            <div
+            style="
+            background:rgba(255,255,255,0.05);
+            backdrop-filter:blur(10px);
+            border:1px solid rgba(255,255,255,0.1);
+            border-radius:15px;
+            padding:20px;
+            margin-bottom:20px;
+            color:#d1d5db;
+            box-shadow:0 0 15px rgba(131,56,236,0.4);
+            ">
+                {{ product.description }}
+            </div>
+
+            <a href="/add-to-cart/{{ product.id }}/"
+               class="btn me-2"
+               style="
+               background:linear-gradient(90deg,#ff006e,#8338ec);
+               color:white;
+               border:none;">
+                Add To Cart
+            </a>
+
+            <a href="/checkout/"
+               class="btn btn-success">
+                Buy Now
+            </a>
+
+            <a href="/"
+               class="btn btn-secondary ms-2">
+                Back
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- Reviews -->
+
+<div class="container mt-5">
+
+```
+<div class="card p-4"
+style="
+background:rgba(255,255,255,0.05);
+border:none;
+border-radius:20px;
+color:white;
+">
+
+    <h2>Customer Reviews</h2>
+
+    <hr>
+
+    <p>⭐⭐⭐⭐⭐ Excellent product and premium quality.</p>
+
+    <p>⭐⭐⭐⭐⭐ Good value for money.</p>
+
+    <p>⭐⭐⭐⭐⭐ Stylish and comfortable.</p>
+
+</div>
+```
+
+</div>
+
+<!-- Footer -->
+
+<footer
+class="text-center p-4 mt-5"
+style="
+background:#161b22;
+color:white;">
+
+```
+<h4>AI Fashion Store</h4>
+
+<p>Fashion • Style • Innovation</p>
+
+<p>© 2026 All Rights Reserved</p>
+```
+
+</footer>
+
+</body>
+</html>
