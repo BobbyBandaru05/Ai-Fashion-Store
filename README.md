@@ -19,8 +19,7 @@ Features:
 8.Product Images and Descriptions
 
 
-Technologies Used:
-1. Python
+Technologies Used:1. Python
 
 2.Django
 
